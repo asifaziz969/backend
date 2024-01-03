@@ -38,4 +38,22 @@ router.get('/delete',  async function(req, res) {
   const oneuser=  await userModel.findOneAndDelete({username:"asif969aziza"});
   res.send(oneuser)
   });
+
+
+
+  ////////////////////////////
+
+//creating flash messages
+
+  router.get('/failed', function(req, res) {
+    req.flash("age",12)
+    res.send("ban gia")
+    
+  });
+  
+  router.get('/check', function(req, res) {
+    console.log(req.flash("age"))
+    res.send("aya?")
+    
+  });
 module.exports = router;
